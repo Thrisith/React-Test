@@ -1,5 +1,5 @@
 import './App.css'
-import { use, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 
 function App() {
   const [add, setAdd] = useState(0);
@@ -17,7 +17,9 @@ function App() {
      setapiData(await fetch("https://reqres.in/api/users?page=2").then(response => response.json()).then(result  => 
       result.data));
   }
-  console.log(apiData);
+  useEffect((
+
+  )=> {console.log(apiData)},[apiData]);
   return (
     <>
       <h1>{add}</h1>
